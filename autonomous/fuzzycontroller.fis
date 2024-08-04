@@ -1,0 +1,57 @@
+[System]
+Name='fuzzycontroller'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=15
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Distance'
+Range=[0 30]
+NumMFs=5
+MF1='V_Small':'trapmf',[0 0 5 10]
+MF2='Small':'trimf',[5 10 15]
+MF3='Perfect':'trimf',[10 15 20]
+MF4='Big':'trimf',[15 20 25]
+MF5='V_Big':'trapmf',[20 25 30 30]
+
+[Input2]
+Name='Speed_Change'
+Range=[-15 15]
+NumMFs=3
+MF1='Declining':'trapmf',[-15 -15 -10 0]
+MF2='Accelerating':'trapmf',[0 10 15 15]
+MF3='Constant':'trimf',[-10 0 10]
+
+[Output1]
+Name='Acceleration_Adjustment'
+Range=[-3 3]
+NumMFs=5
+MF1='-Large':'trapmf',[-3 -3 -2 -1]
+MF2='-Small':'trimf',[-2 -1 0]
+MF3='Zero':'trimf',[-1 0 1]
+MF4='+Small':'trimf',[0 1 2]
+MF5='+Large':'trapmf',[1 2 3 3]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 1 (1) : 1
+2 1, 2 (1) : 1
+2 2, 1 (1) : 1
+2 3, 1 (1) : 1
+3 1, 4 (1) : 1
+3 2, 2 (1) : 1
+3 3, 3 (1) : 1
+4 1, 5 (1) : 1
+4 2, 4 (1) : 1
+4 3, 4 (1) : 1
+5 1, 5 (1) : 1
+5 2, 4 (1) : 1
+5 3, 5 (1) : 1
