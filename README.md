@@ -14,7 +14,7 @@ Combining ROS and the Bug2 path planning algorithm, we’ve created a fully func
 Inputs from the LiDAR sensor provide distance information, and the rover responds with speed adjustments.
 The rover follows an array of x and y coordinates as its goal, navigating through multiple waypoints until reaching the final destination
 
-![Bug2 Explanation](http://url/to/img.png](https://github.com/CarnivorousEgg/IncognitoTabs/blob/main/autonomous/Bug2.jpg?raw=true)
+![Bug2_Explanation](https://github.com/CarnivorousEgg/IncognitoTabs/blob/main/autonomous/Bug2.jpg?raw=true)
 
 ## Authors
 
